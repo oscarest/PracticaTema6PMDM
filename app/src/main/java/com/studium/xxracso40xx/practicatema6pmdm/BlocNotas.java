@@ -23,6 +23,7 @@ SharedPreferences prefs;
        prefs = getSharedPreferences("ficheroconfiguracion", Context.MODE_PRIVATE);
         edit1 = findViewById(R.id.editText);
         edit1.setText(prefs.getString("BlocNotas", ""));
+
     }
     @SuppressLint("RestrictedApi")
     @Override
@@ -39,7 +40,6 @@ SharedPreferences prefs;
         SharedPreferences.Editor editor = prefs.edit();
         editor.putString("BlocNotas", edit1.getText().toString());
         editor.commit();
-        System.out.print(edit1.getText().toString());
         return false;
     }
 }

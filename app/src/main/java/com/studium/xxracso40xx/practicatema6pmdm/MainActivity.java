@@ -16,7 +16,7 @@ import android.widget.ImageView;
 public class MainActivity extends AppCompatActivity {
 Intent intent1, intent2;
 ImageView imagen1, imagen2;
-EditText editBloc;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,7 +25,6 @@ EditText editBloc;
         intent1 = new Intent(this, Personas.class);
         imagen1 = findViewById(R.id.imageView2);
         imagen2 = findViewById(R.id.imageView);
-        editBloc = findViewById(R.id.editText);
         imagen1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v)

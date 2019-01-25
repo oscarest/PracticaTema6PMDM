@@ -3,4 +3,6 @@
     <string name="textNotas" />
     <string name="blocNotas">Bloc de notas</string>
     <string name="personas">Personas</string>
+    <string name="llamar">Llamar</string>
+    <string name="correo">Correo</string>
 </resources>
