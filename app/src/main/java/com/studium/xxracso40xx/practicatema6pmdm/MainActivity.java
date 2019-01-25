@@ -1,18 +1,22 @@
 package com.studium.xxracso40xx.practicatema6pmdm;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.view.menu.MenuBuilder;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
 Intent intent1, intent2;
 ImageView imagen1, imagen2;
+EditText editBloc;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,6 +25,7 @@ ImageView imagen1, imagen2;
         intent1 = new Intent(this, Personas.class);
         imagen1 = findViewById(R.id.imageView2);
         imagen2 = findViewById(R.id.imageView);
+        editBloc = findViewById(R.id.editText);
         imagen1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v)
