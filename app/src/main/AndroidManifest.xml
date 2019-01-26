@@ -16,8 +16,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".BlocNotas" />
-        <activity android:name=".Personas"></activity>
+        <activity android:name=".BlocNotas" android:label="@string/blocNotas" />
+        <activity android:name=".Personas" android:label="@string/personas" />
+        <activity android:name=".EditarPersonas" android:label="@string/EditarPersonas"></activity>
     </application>
 
 </manifest>
