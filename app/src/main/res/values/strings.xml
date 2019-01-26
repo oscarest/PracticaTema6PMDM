@@ -7,4 +7,11 @@
     <string name="correo">Correo</string>
     <string name="editar">Editar</string>
     <string name="EditarPersonas">Editar personas</string>
+    <string name="textViewEditar">Pulse sobre una imagen para seleccionarla</string>
+    <string name="primeraImagen">Usted ha seleccionado la primera imagen</string>
+    <string name="SegundaImagen">Usted ha seleccionado la segunda imagen</string>
+    <string name="TerceraImagen">Usted ha seleccionado la tercera imagen</string>
+    <string name="CuartaImagen">Usted ha seleccionado la cuarta imagen</string>
+    <string name="QuintaImagen">Usted ha seleccionado la quinta imagen</string>
+    <string name="SextaImagen">Usted ha seleccionado la sexta imagen</string>
 </resources>

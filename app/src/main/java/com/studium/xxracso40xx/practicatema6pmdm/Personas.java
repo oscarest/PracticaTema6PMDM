@@ -24,8 +24,7 @@ import static android.Manifest.permission.CALL_PHONE;
 public class Personas extends AppCompatActivity {
 ImageView imagen1, imagen2, imagen3, imagen4, imagen5, imagen6;
     SharedPreferences prefs;
-    public static String cadena2="";
-
+    String correo, telefono;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -44,6 +43,37 @@ ImageView imagen1, imagen2, imagen3, imagen4, imagen5, imagen6;
         registerForContextMenu(imagen4);
         registerForContextMenu(imagen5);
         registerForContextMenu(imagen6);
+    }
+    //ESTOS ONCLICK SIRVEN PARA DECIR QUE VARIABLES SE UTILIZARÁN DEPENDIENDO DE LA IMAGEN QUE SE HAYA HECHO CLICK
+    public void onClick1(View view)
+    {
+        correo="correo1";
+        telefono="telefono1";
+    }
+    public void onClick2(View view)
+    {
+        correo="correo2";
+        telefono="telefono2";
+    }
+    public void onClick3(View view)
+    {
+        correo="correo3";
+        telefono="telefono3";
+    }
+    public void onClick4(View view)
+    {
+        correo="correo4";
+        telefono="telefono4";
+    }
+    public void onClick5(View view)
+    {
+        correo="correo5";
+        telefono="telefono6";
+    }
+    public void onClick6(View view)
+    {
+        correo="correo6";
+        telefono="telefono6";
     }
     @Override
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
@@ -68,7 +98,7 @@ ImageView imagen1, imagen2, imagen3, imagen4, imagen5, imagen6;
         prefs = getSharedPreferences("ficheroconfiguracion", Context.MODE_PRIVATE);
         switch(item.getItemId())
         {
-            case R.id.opcion4:cadena = prefs.getString("telefono1", null);
+            case R.id.opcion4:cadena = prefs.getString(telefono, null);
                 if(cadena==null)
                 {
                     //AQUÍ UN TOAST DICIENDO QUE ESTÁ VACÍO
