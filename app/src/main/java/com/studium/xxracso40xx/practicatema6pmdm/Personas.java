@@ -15,6 +15,7 @@ import android.support.v7.view.menu.MenuBuilder;
 import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -25,6 +26,7 @@ public class Personas extends AppCompatActivity {
 ImageView imagen1, imagen2, imagen3, imagen4, imagen5, imagen6;
     SharedPreferences prefs;
     String correo, telefono;
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -43,10 +45,22 @@ ImageView imagen1, imagen2, imagen3, imagen4, imagen5, imagen6;
         registerForContextMenu(imagen4);
         registerForContextMenu(imagen5);
         registerForContextMenu(imagen6);
+
+       /* imagen1.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event)
+            {
+                System.out.print("Hola");
+                correo="correo1";
+                telefono="telefono1";
+                return false;
+            }
+        });*/
     }
     //ESTOS ONCLICK SIRVEN PARA DECIR QUE VARIABLES SE UTILIZARÁN DEPENDIENDO DE LA IMAGEN QUE SE HAYA HECHO CLICK
     public void onClick1(View view)
     {
+        Toast.makeText(this,getString(R.string.SegundaImagen) , Toast.LENGTH_SHORT).show();
         correo="correo1";
         telefono="telefono1";
     }
