@@ -14,4 +14,8 @@
     <string name="CuartaImagen">Usted ha seleccionado la cuarta imagen</string>
     <string name="QuintaImagen">Usted ha seleccionado la quinta imagen</string>
     <string name="SextaImagen">Usted ha seleccionado la sexta imagen</string>
+    <string name="textViewDatos">A continuación introduzca los datos:</string>
+    <string name="introducir_correo">Introduzca aquí el correo</string>
+    <string name="introducir_telefono">Introduzca aquí el teléfono</string>
+    <string name="act_datos">Actualizar datos</string>
 </resources>

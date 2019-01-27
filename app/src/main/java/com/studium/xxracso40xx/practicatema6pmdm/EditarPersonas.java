@@ -1,8 +1,12 @@
 package com.studium.xxracso40xx.practicatema6pmdm;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -10,6 +14,8 @@ public class EditarPersonas extends AppCompatActivity
 {
     ImageView imagen1, imagen2, imagen3, imagen4, imagen5, imagen6;
     String correo="", telefono="";
+    EditText edit1, edit2;
+    Button btn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,6 +26,20 @@ public class EditarPersonas extends AppCompatActivity
         imagen4 = findViewById(R.id.imageView12);
         imagen5 = findViewById(R.id.imageView13);
         imagen6 = findViewById(R.id.imageView14);
+        edit1 = findViewById(R.id.editText2);
+        edit2 = findViewById(R.id.editText3);
+        btn = findViewById(R.id.button);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                SharedPreferences prefs = getSharedPreferences("ficheroconfiguracion", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = prefs.edit();
+                editor.putString(telefono, edit1.getText().toString());
+                editor.putString(correo, edit2.getText().toString());
+                editor.commit();
+            }
+        });
     }
     public void onClick1(View view)
     {
@@ -48,7 +68,7 @@ public class EditarPersonas extends AppCompatActivity
     public void onClick5(View view)
     {
         correo="correo5";
-        telefono="telefono6";
+        telefono="telefono5";
         Toast.makeText(this,getString(R.string.QuintaImagen) , Toast.LENGTH_SHORT).show();
     }
     public void onClick6(View view)

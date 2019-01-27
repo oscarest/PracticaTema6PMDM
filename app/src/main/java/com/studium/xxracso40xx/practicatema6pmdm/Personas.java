@@ -39,56 +39,71 @@ ImageView imagen1, imagen2, imagen3, imagen4, imagen5, imagen6;
         imagen5 = findViewById(R.id.imageView7);
         imagen6 = findViewById(R.id.imageView8);
 
-        registerForContextMenu(imagen1);
+       /* registerForContextMenu(imagen1);
         registerForContextMenu(imagen2);
         registerForContextMenu(imagen3);
         registerForContextMenu(imagen4);
         registerForContextMenu(imagen5);
         registerForContextMenu(imagen6);
-
-       /* imagen1.setOnTouchListener(new View.OnTouchListener() {
+        */
+        imagen1.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                correo="correo1";
+                telefono="telefono1";
+                registerForContextMenu(imagen1);
+                return false;
+            }
+        });
+        imagen2.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                correo="correo2";
+                telefono="telefono2";
+                registerForContextMenu(imagen2);
+                return false;
+            }
+        });
+        imagen3.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                correo="correo3";
+                telefono="telefono3";
+                registerForContextMenu(imagen3);
+                return false;
+            }
+        });
+        imagen4.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                correo="correo4";
+                telefono="telefono4";
+                registerForContextMenu(imagen4);
+                return false;
+            }
+        });
+        imagen5.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event)
             {
-                System.out.print("Hola");
-                correo="correo1";
-                telefono="telefono1";
+                correo="correo5";
+                telefono="telefono5";
+                registerForContextMenu(imagen5);
                 return false;
             }
-        });*/
+        });
+        imagen6.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                correo="correo6";
+                telefono="telefono6";
+                registerForContextMenu(imagen6);
+                return false;
+            }
+        });
+
     }
     //ESTOS ONCLICK SIRVEN PARA DECIR QUE VARIABLES SE UTILIZARÁN DEPENDIENDO DE LA IMAGEN QUE SE HAYA HECHO CLICK
-    public void onClick1(View view)
-    {
-        Toast.makeText(this,getString(R.string.SegundaImagen) , Toast.LENGTH_SHORT).show();
-        correo="correo1";
-        telefono="telefono1";
-    }
-    public void onClick2(View view)
-    {
-        correo="correo2";
-        telefono="telefono2";
-    }
-    public void onClick3(View view)
-    {
-        correo="correo3";
-        telefono="telefono3";
-    }
-    public void onClick4(View view)
-    {
-        correo="correo4";
-        telefono="telefono4";
-    }
-    public void onClick5(View view)
-    {
-        correo="correo5";
-        telefono="telefono6";
-    }
-    public void onClick6(View view)
-    {
-        correo="correo6";
-        telefono="telefono6";
-    }
     @Override
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
         super.onCreateContextMenu(menu, v, menuInfo);
@@ -103,16 +118,16 @@ ImageView imagen1, imagen2, imagen3, imagen4, imagen5, imagen6;
         m.setOptionalIconsVisible(true);
         return true;
     }
-
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     public boolean onContextItemSelected(MenuItem item) {
         Intent intent = new Intent(Intent.ACTION_VIEW);
-        String cadena=null;
+        String cadena="";
         prefs = getSharedPreferences("ficheroconfiguracion", Context.MODE_PRIVATE);
         switch(item.getItemId())
         {
-            case R.id.opcion4:cadena = prefs.getString(telefono, null);
+            case R.id.opcion4:
+                cadena = prefs.getString(telefono, null);
                 if(cadena==null)
                 {
                     //AQUÍ UN TOAST DICIENDO QUE ESTÁ VACÍO

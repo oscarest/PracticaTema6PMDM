@@ -17,7 +17,6 @@
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="onClick1"
             app:srcCompat="@drawable/persona1" />
 
         <ImageView
@@ -25,7 +24,6 @@
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="onClick2"
             app:srcCompat="@drawable/persona2" />
     </LinearLayout>
 
@@ -39,7 +37,6 @@
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="onClick3"
             app:srcCompat="@drawable/persona3" />
 
         <ImageView
@@ -47,8 +44,8 @@
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="onClick4"
             app:srcCompat="@drawable/persona4" />
+
     </LinearLayout>
 
     <LinearLayout
@@ -61,7 +58,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="onClick5"
             app:srcCompat="@drawable/persona6" />
 
         <ImageView
@@ -69,7 +65,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="onClick6"
             app:srcCompat="@drawable/persona7" />
 
     </LinearLayout>
