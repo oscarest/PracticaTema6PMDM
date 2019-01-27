@@ -1,5 +1,6 @@
 package com.studium.xxracso40xx.practicatema6pmdm;
 
+import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
@@ -8,6 +9,7 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -23,7 +25,8 @@ import android.widget.Toast;
 import static android.Manifest.permission.CALL_PHONE;
 
 public class Personas extends AppCompatActivity {
-ImageView imagen1, imagen2, imagen3, imagen4, imagen5, imagen6;
+    private static final int MY_PERMISSIONS_REQUEST_CALL_PHONE =  1;
+    ImageView imagen1, imagen2, imagen3, imagen4, imagen5, imagen6;
     SharedPreferences prefs;
     String correo, telefono;
     @SuppressLint("ClickableViewAccessibility")
@@ -121,7 +124,6 @@ ImageView imagen1, imagen2, imagen3, imagen4, imagen5, imagen6;
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     public boolean onContextItemSelected(MenuItem item) {
-        Intent intent = new Intent(Intent.ACTION_VIEW);
         String cadena="";
         prefs = getSharedPreferences("ficheroconfiguracion", Context.MODE_PRIVATE);
         switch(item.getItemId())
@@ -137,6 +139,9 @@ ImageView imagen1, imagen2, imagen3, imagen4, imagen5, imagen6;
                 {
                     if (ContextCompat.checkSelfPermission(getApplicationContext(), CALL_PHONE) == PackageManager.PERMISSION_GRANTED)
                     {
+                        //Intent i = new Intent(Intent.ACTION_CALL, Uri.parse(cadena));
+                        //startActivity(i);
+                        Intent intent = new Intent(Intent.ACTION_CALL);
                         intent.setData(Uri.parse(cadena));
                         startActivity(intent);
                     }
@@ -144,6 +149,20 @@ ImageView imagen1, imagen2, imagen3, imagen4, imagen5, imagen6;
                     {
                         requestPermissions(new String[]{CALL_PHONE}, 1);
                     }
+
+                  /*  if (ActivityCompat.checkSelfPermission(this,
+                            Manifest.permission.CALL_PHONE) !=
+                            PackageManager.PERMISSION_GRANTED)
+                    {
+                        ActivityCompat.requestPermissions(this,
+                                new String[]{Manifest.permission.CALL_PHONE},
+                                MY_PERMISSIONS_REQUEST_CALL_PHONE);
+                    }
+                    else
+                        {
+
+                    }
+                    */
                 }
                 break;
             case R.id.opcion5:
