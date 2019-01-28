@@ -133,7 +133,7 @@ public class Personas extends AppCompatActivity {
                 if(cadena==null)
                 {
                     //AQUÍ UN TOAST DICIENDO QUE ESTÁ VACÍO
-                    Toast.makeText(this, "Está vacio el campo teléfono/correo", Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, "Está vacio el campo teléfono", Toast.LENGTH_LONG).show();
                 }
                 else
                 {
@@ -141,9 +141,13 @@ public class Personas extends AppCompatActivity {
                     {
                         //Intent i = new Intent(Intent.ACTION_CALL, Uri.parse(cadena));
                         //startActivity(i);
-                        Intent intent = new Intent(Intent.ACTION_CALL);
+                        /*Intent intent = new Intent(Intent.ACTION_CALL);
                         intent.setData(Uri.parse(cadena));
                         startActivity(intent);
+                        */
+                        Intent callIntent = new Intent(Intent.ACTION_CALL);
+                        callIntent.setData(Uri.parse("tel:" + cadena));
+                        startActivity(callIntent);
                     }
                     else
                     {
@@ -166,6 +170,18 @@ public class Personas extends AppCompatActivity {
                 }
                 break;
             case R.id.opcion5:
+                cadena = prefs.getString(correo, null);
+                if(cadena==null)
+                {
+                    Toast.makeText(this, "Está vacio el campo correo", Toast.LENGTH_LONG).show();
+                }
+                else
+                {
+                    Intent emailIntent = new Intent(Intent.ACTION_SEND);
+                    emailIntent.setData(Uri.parse("mailto:" + "cadena"));
+                    emailIntent.setType("text/plain");
+                    startActivity(emailIntent);
+                }
                 break;
         }
         return super.onContextItemSelected(item);
