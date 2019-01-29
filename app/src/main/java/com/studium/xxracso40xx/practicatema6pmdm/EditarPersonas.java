@@ -15,7 +15,6 @@ public class EditarPersonas extends AppCompatActivity
     ImageView imagen1, imagen2, imagen3, imagen4, imagen5, imagen6;
     String correo="", telefono="";
     EditText edit1, edit2;
-    Button btn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,18 +27,16 @@ public class EditarPersonas extends AppCompatActivity
         imagen6 = findViewById(R.id.imageView14);
         edit1 = findViewById(R.id.editText2);
         edit2 = findViewById(R.id.editText3);
-        btn = findViewById(R.id.button);
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+    }
+    public void onClick(View view)
+    {
+        SharedPreferences prefs = getSharedPreferences("ficheroconfiguracion", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putString(telefono, edit1.getText().toString());
+        editor.putString(correo, edit2.getText().toString());
+        editor.commit();
+        Toast.makeText(this,getString(R.string.confirmacionBoton) , Toast.LENGTH_SHORT).show();
 
-                SharedPreferences prefs = getSharedPreferences("ficheroconfiguracion", Context.MODE_PRIVATE);
-                SharedPreferences.Editor editor = prefs.edit();
-                editor.putString(telefono, edit1.getText().toString());
-                editor.putString(correo, edit2.getText().toString());
-                editor.commit();
-            }
-        });
     }
     public void onClick1(View view)
     {
