@@ -169,7 +169,7 @@ public class Personas extends AppCompatActivity {
                     */
                 }
                 break;
-            case R.id.opcion5:
+                case R.id.opcion5:
                 cadena = prefs.getString(correo, null);
                 if(cadena==null)
                 {
@@ -178,8 +178,8 @@ public class Personas extends AppCompatActivity {
                 else
                 {
                     Intent emailIntent = new Intent(Intent.ACTION_SEND);
-                    emailIntent.setData(Uri.parse("mailto:" + "cadena"));
                     emailIntent.setType("text/plain");
+                    emailIntent.putExtra(Intent.EXTRA_EMAIL, cadena);
                     startActivity(emailIntent);
                 }
                 break;
