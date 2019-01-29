@@ -40,36 +40,73 @@ public class EditarPersonas extends AppCompatActivity
     }
     public void onClick1(View view)
     {
+        imagen1.setBackgroundColor(getResources().getColor(R.color.colorAccent));
+        imagen2.setBackgroundColor(android.R.drawable.btn_default);
+        imagen3.setBackgroundColor(android.R.drawable.btn_default);
+        imagen4.setBackgroundColor(android.R.drawable.btn_default);
+        imagen5.setBackgroundColor(android.R.drawable.btn_default);
+        imagen6.setBackgroundColor(android.R.drawable.btn_default);
         correo="correo1";
         telefono="telefono1";
         Toast.makeText(this,getString(R.string.primeraImagen) , Toast.LENGTH_SHORT).show();
     }
     public void onClick2(View view)
     {
+        imagen2.setBackgroundColor(getResources().getColor(R.color.colorAccent));
+        imagen1.setBackgroundColor(android.R.drawable.btn_default);
+        imagen3.setBackgroundColor(android.R.drawable.btn_default);
+        imagen4.setBackgroundColor(android.R.drawable.btn_default);
+        imagen5.setBackgroundColor(android.R.drawable.btn_default);
+        imagen6.setBackgroundColor(android.R.drawable.btn_default);
+
         correo="correo2";
         telefono="telefono2";
         Toast.makeText(this,getString(R.string.SegundaImagen) , Toast.LENGTH_SHORT).show();
     }
     public void onClick3(View view)
     {
+        imagen3.setBackgroundColor(getResources().getColor(R.color.colorAccent));
+        imagen1.setBackgroundColor(android.R.drawable.btn_default);
+        imagen2.setBackgroundColor(android.R.drawable.btn_default);
+        imagen4.setBackgroundColor(android.R.drawable.btn_default);
+        imagen5.setBackgroundColor(android.R.drawable.btn_default);
+        imagen6.setBackgroundColor(android.R.drawable.btn_default);
         correo="correo3";
         telefono="telefono3";
         Toast.makeText(this,getString(R.string.TerceraImagen) , Toast.LENGTH_SHORT).show();
     }
     public void onClick4(View view)
     {
+        imagen4.setBackgroundColor(getResources().getColor(R.color.colorAccent));
+        imagen1.setBackgroundColor(android.R.drawable.btn_default);
+        imagen3.setBackgroundColor(android.R.drawable.btn_default);
+        imagen2.setBackgroundColor(android.R.drawable.btn_default);
+        imagen5.setBackgroundColor(android.R.drawable.btn_default);
+        imagen6.setBackgroundColor(android.R.drawable.btn_default);
         correo="correo4";
         telefono="telefono4";
         Toast.makeText(this,getString(R.string.CuartaImagen) , Toast.LENGTH_SHORT).show();
     }
     public void onClick5(View view)
     {
+        imagen5.setBackgroundColor(getResources().getColor(R.color.colorAccent));
+        imagen1.setBackgroundColor(android.R.drawable.btn_default);
+        imagen3.setBackgroundColor(android.R.drawable.btn_default);
+        imagen4.setBackgroundColor(android.R.drawable.btn_default);
+        imagen2.setBackgroundColor(android.R.drawable.btn_default);
+        imagen6.setBackgroundColor(android.R.drawable.btn_default);
         correo="correo5";
         telefono="telefono5";
         Toast.makeText(this,getString(R.string.QuintaImagen) , Toast.LENGTH_SHORT).show();
     }
     public void onClick6(View view)
     {
+        imagen6.setBackgroundColor(getResources().getColor(R.color.colorAccent));
+        imagen1.setBackgroundColor(android.R.drawable.btn_default);
+        imagen3.setBackgroundColor(android.R.drawable.btn_default);
+        imagen4.setBackgroundColor(android.R.drawable.btn_default);
+        imagen5.setBackgroundColor(android.R.drawable.btn_default);
+        imagen2.setBackgroundColor(android.R.drawable.btn_default);
         correo="correo6";
         telefono="telefono6";
         Toast.makeText(this,getString(R.string.SextaImagen) , Toast.LENGTH_SHORT).show();
