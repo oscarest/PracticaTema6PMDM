@@ -14,7 +14,6 @@ public class BlocNotas extends AppCompatActivity
 {
 EditText edit1;
 SharedPreferences prefs;
-
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
