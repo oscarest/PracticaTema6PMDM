@@ -18,4 +18,5 @@
     <string name="introducir_correo">Introduzca aquí el correo</string>
     <string name="introducir_telefono">Introduzca aquí el teléfono</string>
     <string name="act_datos">Actualizar datos</string>
+    <string name="confirmacionBoton">Se ha guardado los datos correctamente</string>
 </resources>
