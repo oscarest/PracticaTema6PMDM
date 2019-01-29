@@ -179,7 +179,7 @@ public class Personas extends AppCompatActivity {
                 {
                     Intent emailIntent = new Intent(Intent.ACTION_SEND);
                     emailIntent.setType("text/plain");
-                    emailIntent.putExtra(Intent.EXTRA_EMAIL, cadena);
+                    emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[]{cadena});
                     startActivity(emailIntent);
                 }
                 break;
